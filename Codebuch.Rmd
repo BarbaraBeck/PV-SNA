@@ -1,0 +1,84 @@
+---
+title: "226305 PV WS20-21"
+subtitle: Netzwerk VFB
+author: "Barbara Beck, bb097@hdm-stuttgart.de"
+date: "19 2 2021"
+output: html_document
+---
+
+# Codebuch Netzwerk VFB #
+
+## Ursprung und Datenerhebung
+
+Beim VfB tobt ein Machtkampf um das Präsidentenamt. Ziel der Datenerhebung ist eine Netzwerkanalyse der Mitglieder des Vorstands und des Aufsichtsrats. Die Informationen stammen von der VFB-Website (https://www.vfb.de/de/1893/club/vfb-ag/organe-der-vfb-ag/ ; Stand 15.02.2021). In diesem Netzwerk werden alle Vorstands- und Aufsichtsratmitglieder der VfB AG erhoben sowie deren aktuellen aktiven Mitgliedschaften. 
+
+
+Das Netzwerk ist ein ungerichtetes two-mode Netzwerk.
+
+
+## Node-Attribute
+
+
+### id
+
+eindeutige Codierung des Knoten, wird als Nachname der Person angegeben oder kurze Schreibweise der Organisation
+
+### name
+
+Vollständiger Name des Knotens
+
+### type
+
+Unterscheidung zwischen Person und Organisation
+
+1 = Person <br>
+2 = Organisation
+
+### age
+
+Alter der Person in Zahlen, bei Organisation NA (keine Angabe)
+
+### funk
+
+Funktion des Knotens innerhalb des VFB
+
+1 = Vorstand <br>
+2 = Aufsichtsrat  <br>
+3 = Orga von Aufsichtsrat <br>
+4 = Orga von Vorstand <br>
+5 = Orga von Orga 
+
+### representation
+
+Funktion innerhalb der VFB-Gremien (Politik, Gewerkschaft, Umwelt, Sport, Politik, …)
+
+### position
+
+Position innerhalb des VFBs (Vorsitzender, Stellvertretender Vorsitzender, …) 
+
+## Edge-Attribute
+
+### from
+
+Id des Knotens
+
+### to
+
+Id der aktuellen aktiven Verbindungen (Mitgliedschaften) dieser Person 
+
+
+### relation
+
+Aktuelle Relation zu dieser Organisation der Person
+
+1 = Aufsichtsrat <br>
+2 = Geschäftsführung/Vorstand <br>
+3 = Berater <br>
+4 = Ehrenamt <br>
+5 = Arbeiter <br>
+6 = Verband <br>
+7 = gehört zu VfB 
+
+### time
+
+Seit wann die Person bei Orga in dieser Position ist (Jahr) 
